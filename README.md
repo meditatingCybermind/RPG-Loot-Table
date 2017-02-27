@@ -13,7 +13,7 @@ In the root directory of this repository:
 ## Usage
 Start with this command:
 
-    node LootTable.js exampleTable.json 1.2
+    node app.js exampleTable.json 1.2
 
 Note that your chance for any given loot drop has a hard limit of 75%. This is to prevent infinite loops.
 
@@ -30,7 +30,7 @@ I can then input a string of numbers that correspond to each type of npc. Type `
 ## Example
 I'm running it against the `exampleTable.json` loot table and everything is 20% more common:
 
-    $ node LootTable.js exampleTable.json 1.2
+    $ node app.js exampleTable.json 1.2
     1: CR 1 someSpellcaster
     2: CR 1 giantFighterGuy
     3: CR 0.5 mook

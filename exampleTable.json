@@ -1,0 +1,64 @@
+{
+    "npcs": [
+        {
+            "name": "someSpellcaster",
+            "CR": 1,
+            "table": [
+                {
+                    "name": "Inflict Bad Things",
+                    "type": "Potion",
+                    "value": 20,
+                    "chance": 50
+                },
+                {
+                    "name": "Sad Laser",
+                    "value": 50,
+                    "type": "Scroll",
+                    "chance": 10
+                }
+            ]
+        },
+        {
+            "name": "giantFighterGuy",
+            "CR": 1,
+            "table": [
+                {
+                    "name": "Get Huger",
+                    "type": "Potion",
+                    "value": 750,
+                    "chance": 15
+                },
+                {
+                    "name": "Swollness",
+                    "type": "Elixir",
+                    "value": 120,
+                    "chance": 25
+                },
+                {
+                    "name": "It's on fire!",
+                    "type": "Oil",
+                    "value": 100,
+                    "chance": 15
+                }
+            ]
+        },
+        {
+            "name": "mook",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        }
+    ]
+}

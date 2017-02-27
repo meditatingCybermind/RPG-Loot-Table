@@ -18,8 +18,8 @@ function getPrompt(table, multiplier) {
         pack = result.pack.split('');
         pack.forEach((val, index, array) => {
             let rollResult = rollTable(table.npcs[val-1].table, multiplier);
-            if(rollResult) {
-                console.log(table.npcs[val-1].name + ' has' + rollResult);
+            if(rollResult.itemString) {
+                console.log(table.npcs[val-1].name + ' has' + rollResult.itemString + ' totalling to ' + rollResult.totalValue + ' gold.');
             }
         });
         getPrompt(table, multiplier);
@@ -27,17 +27,20 @@ function getPrompt(table, multiplier) {
 }
 
 function rollTable(table, multiplier) {
-    let ret = '';
+    let itemString = '';
+    let totalValue = 0;
     table.forEach((item, index, array) => {
         let count = 0;
         while(getRandomArbitrary(0, 100) < (item.chance*multiplier > 75 ? 75 : item.chance*multiplier)) {
             count++;
+            totalValue += item.value;
         }
         if (count > 0) {
-            ret += ' ' + count + ' ' + item.type + ' of ' + item.name + ',';
+            itemString += ' ' + count + ' ' + item.type + ' of ' + item.name + ',';
         }
     });
-    return ret;
+
+    return {itemString, totalValue};
 }
 
 function getRandomArbitrary(min, max) {

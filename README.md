@@ -35,16 +35,13 @@ I'm running it against the `exampleTable.json` loot table and everything is 20% 
     2: CR 1 giantFighterGuy
     3: CR 0.5 mook
     Input a pack...
-    prompt: pack:  3333333111112
-    mook has 1 Junk of Worthless,
-    mook has 2 Junk of Worthless,
-    mook has 2 Junk of Worthless,
-    mook has 1 Junk of Worthless, 1 Potion of Rareness,
-    someSpellcaster has 5 Potion of Inflict Bad Things,
-    someSpellcaster has 2 Potion of Inflict Bad Things,
-    someSpellcaster has 2 Potion of Inflict Bad Things,
-    someSpellcaster has 1 Potion of Inflict Bad Things,
-    giantFighterGuy has 2 Elixir of Swollness,
+    prompt: pack:  33332221
+    mook has 1 Junk of Worthless, totalling to 300 gold.
+    mook has 3 Junk of Worthless, totalling to 900 gold.
+    giantFighterGuy has 1 Potion of Get Huger, totalling to 750 gold.
+    giantFighterGuy has 1 Potion of Get Huger, totalling to 750 gold.
+    giantFighterGuy has 1 Potion of Get Huger, totalling to 750 gold.
+    someSpellcaster has 3 Potion of Inflict Bad Things, totalling to 60 gold.
 
     Input a pack...
     prompt: pack:
@@ -52,7 +49,5 @@ I'm running it against the `exampleTable.json` loot table and everything is 20% 
 ## TODO / Known Issues
 
  - Add support for more than 9 npcs
- - Add info about how much a given unit's loot is Worthless
  - Move multiplier information into config, and allow support for more modifiers
  - Add tests
- - Remove commas from the last item.

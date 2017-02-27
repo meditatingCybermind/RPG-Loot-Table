@@ -43,7 +43,169 @@
             ]
         },
         {
+            "name": "mook1",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
+            "name": "mook2",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
             "name": "mook",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
+            "name": "mook3",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
+            "name": "mook4",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
+            "name": "mook5",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
+            "name": "mook6",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
+            "name": "mook7",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
+            "name": "mook8",
+            "CR": 0.5,
+            "table": [
+                {
+                    "name": "Worthless",
+                    "type": "Junk",
+                    "value": 300,
+                    "chance": 75
+                },
+                {
+                    "name": "Rareness",
+                    "type": "Potion",
+                    "value": 50,
+                    "chance": 1
+                }
+            ]
+        },
+        {
+            "name": "mook9",
             "CR": 0.5,
             "table": [
                 {

@@ -48,17 +48,16 @@ I'm running it against the `exampleTable.json` loot table and everything is 20% 
 
     Input a pack, or exit with ~
     prompt: pack: 0011AAAAAA
-    someSpellcaster has 3 Potion of Inflict Bad Things, totalling to 60 gold.
-    someSpellcaster has 3 Potion of Inflict Bad Things, totalling to 60 gold.
+    someSpellcaster has 3 Potions of Inflict Bad Things, totalling to 60 gold.
+    someSpellcaster has 3 Potions of Inflict Bad Things, totalling to 60 gold.
     giantFighterGuy has 1 Elixir of Swollness, totalling to 120 gold.
-    mook8 has 7 Junk of Worthless, totalling to 2100 gold.
+    mook8 has 7 Junks of Worthless, totalling to 2100 gold.
 
-    mook8 has 5 Junk of Worthless, totalling to 1500 gold.
-    mook8 has 13 Junk of Worthless, totalling to 3900 gold.
+    mook8 has 5 Junks of Worthless, totalling to 1500 gold.
+    mook8 has 13 Junks of Worthless, totalling to 3900 gold.
     mook8 has 1 Junk of Worthless, totalling to 300 gold.
-    mook8 has 3 Junk of Worthless, totalling to 900 gold.
+    mook8 has 3 Junks of Worthless, totalling to 900 gold.
 
 ## TODO / Known Issues
 
  - Move multiplier information into config, and allow support for more modifiers
- - Add tests

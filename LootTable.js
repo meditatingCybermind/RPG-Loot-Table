@@ -16,12 +16,13 @@ class LootTable {
             if (err || result.pack == '~') { return self.onErr(err); }
             let pack = result.pack.split('');
             pack.forEach((val, index, array) => {
-                if(self.longBaseCharToNum(val) < array.length) {
+                if(self.longBaseCharToNum(val) < table.npcs.length) {
                     let rollResult = self.rollTable(table.npcs[self.longBaseCharToNum(val)].table, multiplier);
                     if(rollResult.itemString) {
                         console.log(table.npcs[self.longBaseCharToNum(val)].name + ' has' + rollResult.itemString + ' totalling to ' + rollResult.totalValue + ' gold.');
                     }
                 } else {
+                    console.log(self.longBaseCharToNum(val));
                     console.log("No npc at index ", val);
                 }
             });
@@ -47,7 +48,8 @@ class LootTable {
     }
 
     createItemString(count, item) {
-        return ' ' + count + ' ' + item.type + ' of ' + item.name + ',';
+        let plural = count > 1 ? 's' : '';
+        return ' ' + count + ' ' + item.type + plural + ' of ' + item.name + ',';
     }
 
     getRandomArbitrary(min, max) {

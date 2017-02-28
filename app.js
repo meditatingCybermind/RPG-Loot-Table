@@ -9,7 +9,5 @@ table.npcs.forEach((npc, index) => {
     console.log(index+1 + ': CR ' + npc.CR + ' ' + npc.name);
 });
 
-console.log(LootTable);
-
 let app = new LootTable();
 app.startPrompt(table, chanceMultiplier);

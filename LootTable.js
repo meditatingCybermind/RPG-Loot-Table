@@ -46,18 +46,21 @@ class LootTable {
         return Math.random() * (max - min) + min;
     }
 
-    longBaseIndex(index) {
+    longBaseCharToNum(index) {
         if (index < 10) {
             return index;
         } else {
-            return index.charCodeAt(0)-55;
+            let charCode = index.charCodeAt(0)-55;
+            return (charCode > 35 ? charCode - 6 : charCode);
         }
     }
 
-    longBaseCharacter(index) {
+    numToLongBaseChar(index) {
         if (index < 10) {
             return index;
         } else {
+            let character = String.fromCharCode(index+55);
+            return (index < 36 ? String.fromCharCode(index+55) : String.fromCharCode(index+61));
             return String.fromCharCode(index+55);
         }
     }

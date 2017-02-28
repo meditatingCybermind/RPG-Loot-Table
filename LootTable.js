@@ -11,14 +11,18 @@ class LootTable {
 
     getPrompt(table, multiplier) {
         let self = this;
-        console.log('Input a pack...')
+        console.log('Input a pack, or exit with ~')
         let result = prompt.get(['pack'], function (err, result) {
-            if (err || result.pack == 'q') { return self.onErr(err); }
+            if (err || result.pack == '~') { return self.onErr(err); }
             let pack = result.pack.split('');
             pack.forEach((val, index, array) => {
-                let rollResult = self.rollTable(table.npcs[val-1].table, multiplier);
-                if(rollResult.itemString) {
-                    console.log(table.npcs[val-1].name + ' has' + rollResult.itemString + ' totalling to ' + rollResult.totalValue + ' gold.');
+                if(self.longBaseCharToNum(val) < array.length) {
+                    let rollResult = self.rollTable(table.npcs[self.longBaseCharToNum(val)].table, multiplier);
+                    if(rollResult.itemString) {
+                        console.log(table.npcs[self.longBaseCharToNum(val)].name + ' has' + rollResult.itemString + ' totalling to ' + rollResult.totalValue + ' gold.');
+                    }
+                } else {
+                    console.log("No npc at index ", val);
                 }
             });
             self.getPrompt(table, multiplier);
@@ -35,11 +39,15 @@ class LootTable {
                 totalValue += item.value;
             }
             if (count > 0) {
-                itemString += ' ' + count + ' ' + item.type + ' of ' + item.name + ',';
+                itemString = this.createItemString(count, item)
             }
         });
 
         return {itemString, totalValue};
+    }
+
+    createItemString(count, item) {
+        return ' ' + count + ' ' + item.type + ' of ' + item.name + ',';
     }
 
     getRandomArbitrary(min, max) {

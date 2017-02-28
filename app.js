@@ -3,11 +3,14 @@ let LootTable = require('./LootTable.js');
 var table = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 let chanceMultiplier = process.argv[3] || 1;
 
-console.log("A".charCodeAt(0));
+let app = new LootTable();
 
 table.npcs.forEach((npc, index) => {
-    console.log(index+1 + ': CR ' + npc.CR + ' ' + npc.name);
+    console.log(app.numToLongBaseChar(index) + ': CR ' + npc.CR + ' ' + npc.name);
 });
 
-let app = new LootTable();
+if(table.npcs.length > 10) {
+    console.log("\n IMPORTANT! Letter indexes are CASE SENSITIVE! \n");
+}
+
 app.startPrompt(table, chanceMultiplier);

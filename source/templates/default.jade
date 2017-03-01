@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        link(rel='stylesheet', href='/css/index.css')
+        title Pathfinder Item Roller
+    body
+        .header
+            h1.page-title Pathfinder Item Roller
+
+        ul.nav
+            li: a(href='#') Home
+            li: a(href='#item') Item Manager
+            li: a(href='#npc') NPC Manager
+            li: a(href='#roll') Roller
+
+        .main-content
+            block content
+
+        .footer
+            a(href="https://github.com/meditatingCybermind/RPG-Loot-Table") Check it out on Github!

@@ -1,5 +1,9 @@
 let fs = require('fs');
 let LootTable = require('./LootTable.js');
+if(!process.argv[2]) {
+    console.log('Please supply an npc table.');
+    process.exit(1);
+}
 var table = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 let chanceMultiplier = process.argv[3] || 1;
 

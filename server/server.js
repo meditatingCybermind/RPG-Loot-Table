@@ -1,10 +1,10 @@
 var express = require('express')
   , logger = require('morgan')
   , app = express()
-  , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
+  , template = require('jade').compileFile(__dirname + '/../client/homepage/homepage.jade')
 
 app.use(logger('dev'))
-app.use(express.static(__dirname + '/static'))
+app.use(express.static(__dirname + '/../client/static'))
 
 app.get('/', function (req, res, next) {
   try {

@@ -20,12 +20,12 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "build-css": "stylus source/stylesheets/index.styl -o static/css",
-    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
-    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build-css": "stylus client/index.styl -o client/static/css",
+    "watch-css": "stylus client/index.styl -o client/static/css -w",
+    "clean": "rm -rf client/static/css && mkdir -p client/static/css",
     "build": "npm run clean && npm run build-css",
-    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
-    "start": "node server",
+    "watch": "npm run clean && npm run watch-css & nodemon server/server -e js,jade",
+    "start": "node server/server",
     "test": "./node_modules/mocha/bin/mocha"
   },
   "author": "",

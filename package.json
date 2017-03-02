@@ -1,33 +1,35 @@
 {
-  "name": "RPG_Loot-Table",
-  "version": "1.0.0",
-  "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/meditatingCybermind/RPG-Loot-Table.git"
-  },
-  "main": "LootTable.js",
-  "dependencies": {
-    "express": "^4.14.1",
-    "jade": "^1.11.0",
-    "morgan": "^1.8.1",
-    "nodemon": "^1.9.2",
-    "prompt": "^1.0.0",
-    "stylus": "^0.54.5"
-  },
-  "devDependencies": {
-    "karma-mocha": "^1.3.0",
-    "mocha": "^3.2.0"
-  },
-  "scripts": {
-    "build-css": "stylus client/index.styl -o client/static/css",
-    "watch-css": "stylus client/index.styl -o client/static/css -w",
-    "clean": "rm -rf client/static/css && mkdir -p client/static/css",
-    "build": "npm run clean && npm run build-css",
-    "watch": "npm run clean && npm run watch-css & nodemon server/server -e js,jade",
-    "start": "node server/server",
-    "test": "./node_modules/mocha/bin/mocha"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "RPG_Loot-Table",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/meditatingCybermind/RPG-Loot-Table.git"
+    },
+    "dependencies": {
+        "express": "^4.14.1",
+        "jade": "^1.11.0",
+        "morgan": "^1.8.1",
+        "nodemon": "^1.9.2",
+        "prompt": "^1.0.0",
+        "stylus": "^0.54.5"
+    },
+    "devDependencies": {
+        "electromon": "^1.0.6",
+        "electron": "^1.4.1",
+        "karma-mocha": "^1.3.0",
+        "mocha": "^3.2.0"
+    },
+    "scripts": {
+        "build-css": "stylus client/index.styl -o client/static/css",
+        "watch-css": "stylus client/index.styl -o client/static/css -w",
+        "clean": "rm -rf client/static/css && mkdir -p client/static/css",
+        "build": "npm run clean && npm run build-css",
+        "watch": "npm run clean && npm run watch-css & electromon main -e js,jade",
+        "start": "electron .",
+        "test": "./node_modules/mocha/bin/mocha"
+    },
+    "author": "",
+    "license": "ISC"
 }

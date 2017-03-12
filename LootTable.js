@@ -40,7 +40,7 @@ class LootTable {
                 totalValue += item.value;
             }
             if (count > 0) {
-                itemString = this.createItemString(count, item)
+                itemString += this.createItemString(count, item)
             }
         });
 

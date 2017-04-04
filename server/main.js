@@ -1,13 +1,7 @@
 const electron = require('electron'),
     logger = require('morgan'),
-    jade = require('jade'),
     fs = require('fs'),
     path = require('path')
-
-fs.writeFileSync(path.join(__dirname, 'client/static/html/homepage.html'),
-    jade.renderFile(__dirname + '/client/homepage/homepage.jade'), {
-        encoding: 'utf8'
-    });
 
 // Module to control application life.
 const app = electron.app
@@ -29,7 +23,7 @@ function createWindow() {
     })
     // and load the index.html of the app.
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, '/client/static/html/homepage.html'),
+        pathname: path.join(__dirname, '../client/index.html'),
         protocol: 'file:',
         slashes: true
     }))

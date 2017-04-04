@@ -9,7 +9,6 @@
     },
     "dependencies": {
         "express": "^4.14.1",
-        "jade": "^1.11.0",
         "morgan": "^1.8.1",
         "nodemon": "^1.9.2",
         "prompt": "^1.0.0",
@@ -21,11 +20,11 @@
         "mocha": "^3.2.0"
     },
     "scripts": {
-        "build-css": "stylus client/index.styl -o client/static/css",
-        "watch-css": "stylus client/index.styl -o client/static/css -w",
-        "clean": "rm -rf client/static/css && mkdir -p client/static/css",
+        "build-css": "stylus ../client/index.styl -o ../client/static/css",
+        "watch-css": "stylus ../client/index.styl -o ../client/static/css -w",
+        "clean": "rm -rf ../client/static/css && mkdir -p ../client/static/css",
         "build": "npm run clean && npm run build-css",
-        "watch": "npm run clean && npm run watch-css & nodemon --exec 'electron main.js' -e js,jade",
+        "watch": "npm run clean && npm run watch-css & nodemon --exec 'electron main.js' -e js,html --watch . --watch ../client",
         "start": "electron .",
         "test": "./node_modules/mocha/bin/mocha"
     },

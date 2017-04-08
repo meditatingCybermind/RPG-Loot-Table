@@ -3,6 +3,11 @@ const electron = require('electron'),
     fs = require('fs'),
     path = require('path')
 
+//temporary thing
+const config = {
+    context: 'watch'
+}
+
 // Module to control application life.
 const app = electron.app
 
@@ -28,8 +33,13 @@ function createWindow() {
         slashes: true
     }))
 
+
     // Open the DevTools.
     mainWindow.webContents.openDevTools()
+
+    if(config.context === 'watch') {
+        mainWindow.minimize();
+    }
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {

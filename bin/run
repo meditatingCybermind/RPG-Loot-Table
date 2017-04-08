@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+scriptPath=$(f="$0"; while ff=$(readlink $f); do f=$(dirname $f)/$ff; done && echo $f)
+scriptDir=$(cd $(dirname $scriptPath) && pwd)
+projectDir=$(cd $scriptDir/.. && pwd)
+
+node /usr/local/bin/concurrently --kill-others "cd server; npm run watch" "cd client; npm start"

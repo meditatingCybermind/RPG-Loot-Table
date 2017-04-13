@@ -26,7 +26,7 @@
     "watch-css": "stylus ../client/index.styl -o ../client/static/css -w",
     "clean": "rm -rf ../client/static/css && mkdir -p ../client/static/css",
     "build": "npm run clean && npm run build-css",
-    "watch": "npm run clean && npm run watch-css & nodemon --exec 'electron main.js' -e js,html --watch . --watch ../client",
+    "watch": "npm run clean && npm run watch-css & nodemon --exec 'electron main.js' -e js,html --watch . --watch ../client --delay 5",
     "start": "electron .",
     "test": "./node_modules/mocha/bin/mocha"
   },

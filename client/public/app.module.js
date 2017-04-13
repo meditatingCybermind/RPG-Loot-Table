@@ -1,11 +1,11 @@
-(function (app) {
+(function(app) {
   app.AppModule =
     ng.core.NgModule({
-      imports: [ng.platformBrowser.BrowserModule],
-      declarations: [app.AppComponent],
-      bootstrap: [app.AppComponent],
+      imports: [ ng.platformBrowser.BrowserModule ],
+      declarations: [ app.AppComponent ],
+      bootstrap: [ app.AppComponent ]
     })
     .Class({
-      constructor() {},
+      constructor: function() {}
     });
-}(window.app || (window.app = {})));
+})(window.app || (window.app = {}));

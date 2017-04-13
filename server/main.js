@@ -5,7 +5,7 @@ const electron = require('electron'),
 
 //temporary thing
 const config = {
-    context: 'watch'
+    context: ''
 }
 
 // Module to control application life.

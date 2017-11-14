@@ -1,0 +1,19 @@
+<div class="row content-module">
+  <div class="sidebar  lime darken-2">
+    <ul class="tool-list">
+      <li *ngFor="let tool of toolList">
+        <button mat-fab
+                matTooltip="{{tool.name}}"
+                matTooltipPosition="right"
+                class="tool-button"
+                color="primary">
+                <i class="material-icons">{{tool.icon}}</i>
+            </button>
+
+      </li>
+    </ul>
+  </div>
+  <div class="content row lime lighten-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

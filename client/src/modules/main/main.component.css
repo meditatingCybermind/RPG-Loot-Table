@@ -1,0 +1,18 @@
+.sidebar {
+  position: fixed;
+  width: 70px;
+  height: 100%;
+}
+
+.content {
+  margin-left: 70px;
+  height: 100%;
+  width: auto;
+  position: relative;
+  overflow: auto;
+  z-index: 1;
+}
+
+.tool-button {
+    margin: 7px;
+}

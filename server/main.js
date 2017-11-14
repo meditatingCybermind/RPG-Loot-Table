@@ -1,7 +1,8 @@
 const electron = require('electron'),
     logger = require('morgan'),
     fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    debugMenu = require('debug-menu');
 
 //temporary thing
 const config = {
@@ -42,6 +43,17 @@ function createWindow() {
         console.log(1);
     }
 
+    const menu = electron.Menu.buildFromTemplate([{
+        label: 'Debug',
+        submenu: debugMenu.windowDebugMenu(mainWindow)
+    }]);
+
+    if (process.platform !== 'darwin') {
+        mainWindow.setMenu(menu);
+    } else {
+        electron.Menu.setApplicationMenu(menu);
+    }
+
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {
         // Dereference the window object, usually you would store windows
@@ -72,6 +84,8 @@ app.on('activate', function() {
         createWindow()
     }
 })
+
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

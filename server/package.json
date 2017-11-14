@@ -8,8 +8,10 @@
     "url": "git://github.com/meditatingCybermind/RPG-Loot-Table.git"
   },
   "dependencies": {
+    "debug-menu": "^0.6.1",
     "dexie": "^1.5.1",
     "express": "^4.14.1",
+    "material-icons": "^0.1.0",
     "morgan": "^1.8.1",
     "nedb": "^1.8.0",
     "nodemon": "^1.9.2",

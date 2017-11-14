@@ -2,13 +2,14 @@
   <div class="sidebar  lime darken-2">
     <ul class="tool-list">
       <li *ngFor="let tool of toolList">
-        <button mat-fab
+        <a mat-fab
+                routerLink="{{tool.route}}"
                 matTooltip="{{tool.name}}"
                 matTooltipPosition="right"
                 class="tool-button"
                 color="primary">
                 <i class="material-icons">{{tool.icon}}</i>
-            </button>
+            </a>
 
       </li>
     </ul>

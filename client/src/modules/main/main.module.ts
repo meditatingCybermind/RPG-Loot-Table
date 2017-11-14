@@ -7,33 +7,51 @@ import { RouterModule, Routes } from '@angular/router';
 import { PlayerManagementModule } from '../player-management/player-management.module';
 import { PlayerManagementComponent } from '../player-management/player-management.component'
 
+import { SkillRollerModule } from '../skill-roller/skill-roller.module';
+import { SkillRollerComponent } from '../skill-roller/skill-roller.component';
+
+import { DashboardModule } from '../dashboard/dashboard.module';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+
+import {CampaignManagementModule} from '../campaign-management/campaign-management.module';
+import {CampaignManagementComponent} from '../campaign-management/campaign-management.component';
+
 import { MainComponent } from './main.component';
 
 const appRoutes: Routes = [
 	{
 		path: 'player-management',
 		component: PlayerManagementComponent,
-		data: { title: 'Player Management' }
 	},
 	{
-		path: '',
-		redirectTo: '/heroes',
-		pathMatch: 'full'
+		path: 'campaign-management',
+		component: CampaignManagementComponent,
 	},
-	{ path: '**', component: PlayerManagementComponent }
+	{
+		path: 'dashboard',
+		component: DashboardComponent,
+	},
+	{
+		path: 'skill-roller',
+		component: SkillRollerComponent,
+	},
+	{ path: '**', component: DashboardComponent }
 ];
 
 @NgModule({
 	imports: [
-        RouterModule.forRoot(
-            appRoutes,
-            { enableTracing: true } // <-- debugging purposes only
-        ),
+		RouterModule.forRoot(
+			appRoutes,
+			{ enableTracing: true } // <-- debugging purposes only
+		),
 		CommonModule,
 		MatButtonModule,
 		MatTooltipModule,
 		BrowserAnimationsModule,
-		PlayerManagementModule
+		PlayerManagementModule,
+		SkillRollerModule,
+		DashboardModule,
+		CampaignManagementModule
 	],
 	exports: [
 		MainComponent,

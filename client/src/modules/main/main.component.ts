@@ -8,13 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
     toolList = [
+		{
+			name: 'Dashboard',
+			icon: 'lock',
+			route: 'dashboard'
+		},
+		{
+			name: 'Campaign Management',
+			icon: 'note',
+			route: 'campaign-management'
+		},
         {
             name: 'Player Management',
-            icon: 'people'
+            icon: 'people',
+			route: 'player-management'
         },
         {
             name: 'Skill Roller',
-            icon: 'check'
+            icon: 'check',
+			route: 'skill-roller'
         }
     ]
 	constructor() { }

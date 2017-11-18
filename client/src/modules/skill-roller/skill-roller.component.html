@@ -15,8 +15,8 @@
             Modifier<button class="red"
                     (click)="clearModifier(players)"
                     mat-button>
-                                        Clear<i class="material-icons">clear</i>
-                                </button>
+                        Clear<i class="material-icons">clear</i>
+                    </button>
           </th>
         </tr>
       </thead>
@@ -29,7 +29,8 @@
             {{player.skills[selectedSkill]}}
           </td>
           <td>
-            <input type="number" [(ngModel)]="player.modifier" />
+            <input type="number"
+                   [(ngModel)]="player.modifier" />
           </td>
         </tr>
       </tbody>
@@ -50,14 +51,15 @@
     <div *ngIf="selectedSkill">
       <div class="row">
         <div class="col s6">
-          Set Target: <input type="number" [(ngModel)]="target" />
+          Set Target: <input type="number"
+                 [(ngModel)]="target" />
         </div>
         <div class="col s6">
           <button class="green"
                   (click)="rollResult = doCheck(players, selectedSkill, skills.die, target)"
                   mat-button>
                     Roll
-                </button>
+          </button>
 
         </div>
       </div>

@@ -1,35 +1,94 @@
 <!-- Display all player skills... for now? -->
 
-<table class="striped">
-    <thead>
+<div class="row">
+  <div class="col s12 l6">
+    <table class="striped">
+      <thead>
         <tr>
-            <th>
-                Character
-            </th>
-            <th *ngFor="let skill of skills">
-                {{skill}}
-            </th>
+          <th>
+            Character
+          </th>
+          <th>
+            {{(selectedSkill | titlecase) || "Select a Skill"}}
+          </th>
+          <th>
+            Modifier<button class="red"
+                    (click)="clearModifier(players)"
+                    mat-button>
+                                        <i class="material-icons">clear</i>
+                                </button>
+          </th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr *ngFor="let player of players">
-            <td>
-                {{player.name}}
-            </td>
-            <td *ngFor="let skill of skills">
-                {{player[skill]}}
-            </td>
+          <td>
+            {{player.name}}
+          </td>
+          <td>
+            {{player.skills[selectedSkill]}}
+          </td>
+          <td>
+            <input type="number" [(ngModel)]="player.modifier" />
+          </td>
         </tr>
-    </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
 
-<!-- Select skill you want to roll -->
-<mat-form-field>
-    <mat-select placeholder="Select Skill">
-        <mat-option *ngFor="let skill of skills" [value]="selectedSkill">
-            {{skill}}
+  <div class="col m12 l6">
+    <mat-form-field>
+      <mat-select placeholder="Select Skill"
+                  [(value)]="selectedSkill">
+        <mat-option *ngFor="let skill of skills.list"
+                    value="{{skill}}">
+          {{skill | titlecase}}
         </mat-option>
-    </mat-select>
-</mat-form-field>
+      </mat-select>
+    </mat-form-field>
 
-Skill: {{selectedSkill}}
+    <div *ngIf="selectedSkill">
+      <div class="row">
+        <div class="col s6">
+          Set Target: <input type="number" [(ngModel)]="target" />
+        </div>
+        <div class="col s6">
+          <button class="green"
+                  (click)="rollResult = doCheck(players, selectedSkill, skills.die, target)"
+                  mat-button>
+                    Roll
+                </button>
+
+        </div>
+      </div>
+
+      <table *ngIf="rollResult.length"
+             class="striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th>
+              Character
+            </th>
+            <th>
+              Result
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let result of rollResult">
+            <td>
+              <i class="material-icons {{result.color}}">{{result.icon}}</i>
+            </td>
+            <td>
+              {{result.characterName}}
+            </td>
+            <td>
+              {{result.roll}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

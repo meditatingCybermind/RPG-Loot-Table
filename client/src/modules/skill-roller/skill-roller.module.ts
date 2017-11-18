@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { SkillRollerComponent } from './skill-roller.component';
 import { CommonModule } from '@angular/common'
-import { MatSelectModule } from '@angular/material/select';
+
+import { SharedModule } from '../shared/shared.module';
 // import { NgModel } from '@angular/forms';
 
 
@@ -9,7 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 @NgModule({
 	imports: [
 		CommonModule,
-		MatSelectModule,
+		SharedModule
 		// NgModel
 	],
 	declarations: [SkillRollerComponent],

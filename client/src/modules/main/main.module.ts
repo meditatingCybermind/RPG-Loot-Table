@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
-import { MatButtonModule, MatTooltipModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../shared/shared.module'
 
 import { PlayerManagementModule } from '../player-management/player-management.module';
 import { PlayerManagementComponent } from '../player-management/player-management.component'
@@ -13,8 +12,8 @@ import { SkillRollerComponent } from '../skill-roller/skill-roller.component';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
-import {CampaignManagementModule} from '../campaign-management/campaign-management.module';
-import {CampaignManagementComponent} from '../campaign-management/campaign-management.component';
+import { CampaignManagementModule } from '../campaign-management/campaign-management.module';
+import { CampaignManagementComponent } from '../campaign-management/campaign-management.component';
 
 import { MainComponent } from './main.component';
 
@@ -45,9 +44,7 @@ const appRoutes: Routes = [
 			{ enableTracing: true } // <-- debugging purposes only
 		),
 		CommonModule,
-		MatButtonModule,
-		MatTooltipModule,
-		BrowserAnimationsModule,
+		SharedModule,
 		PlayerManagementModule,
 		SkillRollerModule,
 		DashboardModule,

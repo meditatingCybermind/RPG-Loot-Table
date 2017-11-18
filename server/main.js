@@ -43,16 +43,16 @@ function createWindow() {
         console.log(1);
     }
 
-    const menu = electron.Menu.buildFromTemplate([{
-        label: 'Debug',
-        submenu: debugMenu.windowDebugMenu(mainWindow)
-    }]);
-
-    if (process.platform !== 'darwin') {
-        mainWindow.setMenu(menu);
-    } else {
-        electron.Menu.setApplicationMenu(menu);
-    }
+    // const menu = electron.Menu.buildFromTemplate([{
+    //     label: 'Debug',
+    //     submenu: debugMenu.windowDebugMenu(mainWindow)
+    // }]);
+    //
+    // if (process.platform !== 'darwin') {
+    //     mainWindow.setMenu(menu);
+    // } else {
+    //     electron.Menu.setApplicationMenu(menu);
+    // }
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatTableDataSource} from '@angular/material';
+
 
 @Component({
 	selector: 'skill-roller',
@@ -7,8 +9,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillRollerComponent implements OnInit {
 	selectedSkill = "";
-
-	rollResult = [];
 
 	target = 0;
 
@@ -122,10 +122,16 @@ export class SkillRollerComponent implements OnInit {
 		explodingDie: false
 	};
 
+
+
 	constructor() { }
+
+	playerDataSource = new MatTableDataSource();
+	rollDataSource = new MatTableDataSource();
 
 	ngOnInit() {
 		this.clearModifier(this.players);
+		this.playerDataSource.data = this.players;
 	}
 
 	clearModifier(characterList: Array<Character>) {

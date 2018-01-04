@@ -1,19 +1,16 @@
-<div class="row content-module">
-  <div class="sidebar darken-2">
-    <ul class="tool-list">
-      <li *ngFor="let tool of toolList">
-        <a mat-fab
-                routerLink="{{tool.route}}"
-                matTooltip="{{tool.name}}"
-                matTooltipPosition="right"
-                class="tool-button"
-                color="primary">
-                <i class="material-icons">{{tool.icon}}</i>
-            </a>
-      </li>
-    </ul>
+<div class="content-module">
+  <div class="sidebar">
+    <a mat-fab
+        *ngFor="let tool of toolList"
+        routerLink="{{tool.route}}"
+        matTooltip="{{tool.name}}"
+        matTooltipPosition="right"
+        class="tool-button"
+        color="primary">
+            <i class="material-icons">{{tool.icon}}</i>
+    </a>
   </div>
-  <div class="content row lime lighten-4">
+  <div class="content">
     <router-outlet></router-outlet>
   </div>
 </div>

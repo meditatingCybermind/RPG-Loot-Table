@@ -1,43 +1,44 @@
 <!-- Display all player skills... for now? -->
 
-<div class="row">
-  <div class="col s12 l6">
-    <table class="striped">
-      <thead>
-        <tr>
-          <th>
-            Character
-          </th>
-          <th>
-            {{(selectedSkill | titlecase) || "Select a Skill"}}
-          </th>
-          <th>
-            Modifier<button class="red"
-                    (click)="clearModifier(players)"
-                    mat-button>
-                        Clear<i class="material-icons">clear</i>
-                    </button>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let player of players">
-          <td>
-            {{player.name}}
-          </td>
-          <td>
-            {{player.skills[selectedSkill]}}
-          </td>
-          <td>
-            <input type="number"
+<div class="grid"
+     style="--cols-xl: 8">
+  <div style="--col-xl: span 4">
+    <mat-table [dataSource]="playerDataSource">
+
+      <ng-container matColumnDef="characterName">
+        <mat-header-cell *matHeaderCellDef> Character </mat-header-cell>
+        <mat-cell *matCellDef="let player"> {{player.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="skill">
+        <mat-header-cell *matHeaderCellDef> {{(selectedSkill | titlecase) || "Select a Skill"}} </mat-header-cell>
+        <mat-cell *matCellDef="let player"> {{player.skills[selectedSkill]}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="modifier">
+        <mat-header-cell *matHeaderCellDef> Modifier
+          <button class="red"
+                  (click)="clearModifier(players)"
+                  mat-button>
+                    Clear<i class="material-icons">clear</i>
+                </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let player">
+          <mat-form-field>
+            <input matInput
+                   type="number"
                    [(ngModel)]="player.modifier" />
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="['characterName', 'skill', 'modifier']"></mat-header-row>
+      <mat-row *matRowDef="let myRowData; columns: ['characterName', 'skill', 'modifier']"></mat-row>
+
+    </mat-table>
   </div>
 
-  <div class="col m12 l6">
+  <div style="--col-xl: span 1;">
     <mat-form-field>
       <mat-select placeholder="Select Skill"
                   [(value)]="selectedSkill">
@@ -48,49 +49,49 @@
       </mat-select>
     </mat-form-field>
 
-    <div *ngIf="selectedSkill">
-      <div class="row">
-        <div class="col s6">
-          Set Target: <input type="number"
-                 [(ngModel)]="target" />
+    <div class="grid"
+         *ngIf="selectedSkill">
+      <div>
+        <div>
+          Set Target:
+          <mat-form-field>
+            <input matInput
+                   type="number"
+                   [(ngModel)]="target" />
+          </mat-form-field>
         </div>
         <div class="col s6">
           <button class="green"
-                  (click)="rollResult = doCheck(players, selectedSkill, skills.die, target)"
+                  (click)="rollDataSource.data = doCheck(players, selectedSkill, skills.die, target)"
                   mat-button>
                     Roll
           </button>
-
         </div>
       </div>
-
-      <table *ngIf="rollResult.length"
-             class="striped">
-        <thead>
-          <tr>
-            <th></th>
-            <th>
-              Character
-            </th>
-            <th>
-              Result
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let result of rollResult">
-            <td>
-              <i class="material-icons {{result.color}}">{{result.icon}}</i>
-            </td>
-            <td>
-              {{result.characterName}}
-            </td>
-            <td>
-              {{result.roll}}
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
+  </div>
+  <div style="--col-xl: span 3;">
+    <mat-table *ngIf="rollDataSource.data.length"
+               [dataSource]="rollDataSource">
+
+      <ng-container matColumnDef="icon">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let result"> <i class="material-icons">{{result.icon}}</i> </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="characterName">
+        <mat-header-cell *matHeaderCellDef> Character </mat-header-cell>
+        <mat-cell *matCellDef="let result"> {{result.characterName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="roll">
+        <mat-header-cell *matHeaderCellDef> Result </mat-header-cell>
+        <mat-cell *matCellDef="let result"> {{result.roll}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="['icon', 'characterName', 'roll']"></mat-header-row>
+      <mat-row *matRowDef="let myRowData; columns: ['icon', 'characterName', 'roll']"></mat-row>
+
+    </mat-table>
   </div>
 </div>

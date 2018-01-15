@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CampaignManagementComponent } from './campaign-management.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-	imports: [],
+	imports: [ SharedModule ],
 	declarations: [CampaignManagementComponent],
 	providers: [],
 	exports: [CampaignManagementComponent]

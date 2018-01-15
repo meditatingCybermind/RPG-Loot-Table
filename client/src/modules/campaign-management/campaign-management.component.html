@@ -1,2 +1,25 @@
-Campaign Management
-THIS COEMS NEXT and i'm testing git
+<div>
+    <span>Select your game system:
+        <mat-form-field>
+            <mat-select placeholder="Game System"
+                        [(value)]="campaignSettings.system">
+                <mat-option *ngFor="let system of systems"
+                    [value]="system.name">
+                    {{ system.name | titlecase}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </span>
+</div>
+
+<div *ngIf="campaignSettings.system">
+    <h1>Apply Available Houserules</h1>
+    <div  class="grid">
+        <div>
+            Skills
+        </div>
+        <div>
+            Magic
+        </div>
+    </div>
+</div>

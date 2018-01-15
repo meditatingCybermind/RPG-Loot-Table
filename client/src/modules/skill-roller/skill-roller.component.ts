@@ -5,7 +5,7 @@ import {MatTableDataSource} from '@angular/material';
 @Component({
 	selector: 'skill-roller',
 	templateUrl: 'skill-roller.component.html',
-	styleUrls: ['skill-roller.component.less']
+	styleUrls: ['skill-roller.component.scss']
 })
 export class SkillRollerComponent implements OnInit {
 	selectedSkill = "";

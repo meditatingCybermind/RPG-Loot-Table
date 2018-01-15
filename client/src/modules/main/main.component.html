@@ -1,5 +1,5 @@
 <div class="content-module">
-  <div class="sidebar">
+  <div class="sidebar co-bg-sidebar">
     <a mat-fab
         *ngFor="let tool of toolList"
         routerLink="{{tool.route}}"
@@ -10,7 +10,7 @@
             <i class="material-icons">{{tool.icon}}</i>
     </a>
   </div>
-  <div class="content">
+  <div class="content co-bg-content">
     <router-outlet></router-outlet>
   </div>
 </div>

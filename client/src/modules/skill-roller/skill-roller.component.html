@@ -3,7 +3,7 @@
 <div class="grid"
      style="--cols-xl: 8">
   <div style="--col-xl: span 4">
-    <mat-table [dataSource]="playerDataSource">
+    <mat-table  class="co-bg-content" [dataSource]="playerDataSource">
 
       <ng-container matColumnDef="characterName">
         <mat-header-cell *matHeaderCellDef> Character </mat-header-cell>
@@ -17,11 +17,10 @@
 
       <ng-container matColumnDef="modifier">
         <mat-header-cell *matHeaderCellDef> Modifier
-          <button class="red"
-                  (click)="clearModifier(players)"
-                  mat-button>
-                    Clear<i class="material-icons">clear</i>
-                </button>
+          <button mat-raised-button
+              (click)="clearModifier(players)"
+              color="warn"
+              >Clear<i class="material-icons">clear</i></button>
         </mat-header-cell>
         <mat-cell *matCellDef="let player">
           <mat-form-field>
@@ -38,7 +37,7 @@
     </mat-table>
   </div>
 
-  <div style="--col-xl: span 1;">
+  <div class="select-skill" style="--col-xl: span 1;">
     <mat-form-field>
       <mat-select placeholder="Select Skill"
                   [(value)]="selectedSkill">
@@ -49,9 +48,7 @@
       </mat-select>
     </mat-form-field>
 
-    <div class="grid"
-         *ngIf="selectedSkill">
-      <div>
+    <div *ngIf="selectedSkill">
         <div>
           Set Target:
           <mat-form-field>
@@ -60,19 +57,21 @@
                    [(ngModel)]="target" />
           </mat-form-field>
         </div>
-        <div class="col s6">
-          <button class="green"
+        <div>
+          <button  mat-raised-button
                   (click)="rollDataSource.data = doCheck(players, selectedSkill, skills.die, target)"
-                  mat-button>
+                  mat-raised-button
+                  color="primary">
                     Roll
           </button>
         </div>
-      </div>
     </div>
   </div>
   <div style="--col-xl: span 3;">
-    <mat-table *ngIf="rollDataSource.data.length"
-               [dataSource]="rollDataSource">
+    <mat-table
+        class="co-bg-content"
+        *ngIf="rollDataSource.data.length"
+        [dataSource]="rollDataSource">
 
       <ng-container matColumnDef="icon">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
